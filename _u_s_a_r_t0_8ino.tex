@@ -1,0 +1,193 @@
+\doxysection{Référence du fichier USART0.\+ino}
+\hypertarget{_u_s_a_r_t0_8ino}{}\label{_u_s_a_r_t0_8ino}\index{USART0.ino@{USART0.ino}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u_s_a_r_t0_8ino_a5bf1d46877ac22d5e12d9b1c0432d373}{FRAMING\+\_\+\+ERROR}}~(1$<$$<$FE0)
+\begin{DoxyCompactList}\small\item\em Vérification de la bonne définition du BAUD. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_t0_8ino_a81d2ca6759f3f3bf04556b7558aea6bc}{PARITY\+\_\+\+ERROR}}~(1$<$$<$UPE0)
+\begin{DoxyCompactList}\small\item\em Définition d\textquotesingle{}une possible erreur de parité \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_t0_8ino_a71b59e9e65a8625df1d0af2143664c52}{DATA\+\_\+\+OVERRUN}}~(1$<$$<$DOR0)
+\begin{DoxyCompactList}\small\item\em Erreur de data définit au-\/delà de l\textquotesingle{}espace mémoire. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_t0_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}~16000000
+\begin{DoxyCompactList}\small\item\em Définition de la fréquence d\textquotesingle{}oscillation à 16 MHz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_t0_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}~9600
+\begin{DoxyCompactList}\small\item\em Définition de BAUD à 9600 pour le port série. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_t0_8ino_a711e9130c825a7269c8c87dbb57a85e0}{MYUBRR}}~\mbox{\hyperlink{_u_s_a_r_t0_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}/16/\mbox{\hyperlink{_u_s_a_r_t0_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}-\/1
+\begin{DoxyCompactList}\small\item\em Calcul pour le taux du port série. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_s_a_r_t0_8ino_a99f79737b2f8bf945b4c169c69e3e3eb}{USART\+\_\+\+Init}} (unsigned int ubrr)
+\begin{DoxyCompactList}\small\item\em Initialisation des variables pour pouvoir utiliser transmit and receive et avoir un bit de stop à 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_s_a_r_t0_8ino_ab8c416106cf1aff4ccdb3da4860fc179}{USART\+\_\+\+Transmit}} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Fonction transmit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_s_a_r_t0_8ino_ab6e9fd192b4aa0d1342af41edb7e8db6}{USART\+\_\+puts}} (unsigned char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de sauter une ligne. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{_u_s_a_r_t0_8ino_a48435142a44158906915a0de70dcab5c}{USART\+\_\+\+Receive}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recevoir les caractères transmits. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u_s_a_r_t0_8ino_a05e7738df4ed987e09baf5c97d834884}{if}} ((status \&(\mbox{\hyperlink{_u_s_a_r_t0_8ino_a5bf1d46877ac22d5e12d9b1c0432d373}{FRAMING\+\_\+\+ERROR}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{_u_s_a_r_t0_8ino_a81d2ca6759f3f3bf04556b7558aea6bc}{PARITY\+\_\+\+ERROR}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{_u_s_a_r_t0_8ino_a71b59e9e65a8625df1d0af2143664c52}{DATA\+\_\+\+OVERRUN}}))==0)
+\begin{DoxyCompactList}\small\item\em S\textquotesingle{}il n\textquotesingle{}y a aucune erreur on passe le flag à 1 sinon on affiche "{}error"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u_s_a_r_t0_8ino_a4fb05335500c4185447e5845fe9c5dde}{USART\+\_\+puts}} ("{}error"{})
+\item 
+int \mbox{\hyperlink{_u_s_a_r_t0_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Utilisation de l\textquotesingle{}interruption dans le main pour afficher le caractère suivant sinon ne rien afficher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_u_s_a_r_t0_8ino_adf916204820072417ed73a32de1cefcf}{flag}} =0
+\item 
+\mbox{\hyperlink{_u_s_a_r_t0_8ino_a0544c3fe466e421738dae463968b70ba}{else}} \{UDR0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{_u_s_a_r_t0_8ino_a62634036639f88eece6fbf226b45f84b}\label{_u_s_a_r_t0_8ino_a62634036639f88eece6fbf226b45f84b} 
+\index{USART0.ino@{USART0.ino}!BAUD@{BAUD}}
+\index{BAUD@{BAUD}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{BAUD}{BAUD}}
+{\footnotesize\ttfamily \#define BAUD~9600}
+
+
+
+Définition de BAUD à 9600 pour le port série. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a71b59e9e65a8625df1d0af2143664c52}\label{_u_s_a_r_t0_8ino_a71b59e9e65a8625df1d0af2143664c52} 
+\index{USART0.ino@{USART0.ino}!DATA\_OVERRUN@{DATA\_OVERRUN}}
+\index{DATA\_OVERRUN@{DATA\_OVERRUN}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{DATA\_OVERRUN}{DATA\_OVERRUN}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+OVERRUN~(1$<$$<$DOR0)}
+
+
+
+Erreur de data définit au-\/delà de l\textquotesingle{}espace mémoire. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a802b2b582b121e4632aa9a491d503720}\label{_u_s_a_r_t0_8ino_a802b2b582b121e4632aa9a491d503720} 
+\index{USART0.ino@{USART0.ino}!FOSC@{FOSC}}
+\index{FOSC@{FOSC}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{FOSC}{FOSC}}
+{\footnotesize\ttfamily \#define FOSC~16000000}
+
+
+
+Définition de la fréquence d\textquotesingle{}oscillation à 16 MHz. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a5bf1d46877ac22d5e12d9b1c0432d373}\label{_u_s_a_r_t0_8ino_a5bf1d46877ac22d5e12d9b1c0432d373} 
+\index{USART0.ino@{USART0.ino}!FRAMING\_ERROR@{FRAMING\_ERROR}}
+\index{FRAMING\_ERROR@{FRAMING\_ERROR}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{FRAMING\_ERROR}{FRAMING\_ERROR}}
+{\footnotesize\ttfamily \#define FRAMING\+\_\+\+ERROR~(1$<$$<$FE0)}
+
+
+
+Vérification de la bonne définition du BAUD. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a711e9130c825a7269c8c87dbb57a85e0}\label{_u_s_a_r_t0_8ino_a711e9130c825a7269c8c87dbb57a85e0} 
+\index{USART0.ino@{USART0.ino}!MYUBRR@{MYUBRR}}
+\index{MYUBRR@{MYUBRR}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{MYUBRR}{MYUBRR}}
+{\footnotesize\ttfamily \#define MYUBRR~\mbox{\hyperlink{_u_s_a_r_t0_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}/16/\mbox{\hyperlink{_u_s_a_r_t0_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}-\/1}
+
+
+
+Calcul pour le taux du port série. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a81d2ca6759f3f3bf04556b7558aea6bc}\label{_u_s_a_r_t0_8ino_a81d2ca6759f3f3bf04556b7558aea6bc} 
+\index{USART0.ino@{USART0.ino}!PARITY\_ERROR@{PARITY\_ERROR}}
+\index{PARITY\_ERROR@{PARITY\_ERROR}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{PARITY\_ERROR}{PARITY\_ERROR}}
+{\footnotesize\ttfamily \#define PARITY\+\_\+\+ERROR~(1$<$$<$UPE0)}
+
+
+
+Définition d\textquotesingle{}une possible erreur de parité 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{_u_s_a_r_t0_8ino_a05e7738df4ed987e09baf5c97d834884}\label{_u_s_a_r_t0_8ino_a05e7738df4ed987e09baf5c97d834884} 
+\index{USART0.ino@{USART0.ino}!if@{if}}
+\index{if@{if}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{(status \&(\mbox{\hyperlink{_u_s_a_r_t0_8ino_a5bf1d46877ac22d5e12d9b1c0432d373}{FRAMING\+\_\+\+ERROR}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{_u_s_a_r_t0_8ino_a81d2ca6759f3f3bf04556b7558aea6bc}{PARITY\+\_\+\+ERROR}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{_u_s_a_r_t0_8ino_a71b59e9e65a8625df1d0af2143664c52}{DATA\+\_\+\+OVERRUN}}))}]{ = {\ttfamily =0} }\end{DoxyParamCaption})}
+
+
+
+S\textquotesingle{}il n\textquotesingle{}y a aucune erreur on passe le flag à 1 sinon on affiche "{}error"{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em flag} & Variable pour l\textquotesingle{}interruption \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u_s_a_r_t0_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_u_s_a_r_t0_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{USART0.ino@{USART0.ino}!main@{main}}
+\index{main@{main}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Utilisation de l\textquotesingle{}interruption dans le main pour afficher le caractère suivant sinon ne rien afficher. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a99f79737b2f8bf945b4c169c69e3e3eb}\label{_u_s_a_r_t0_8ino_a99f79737b2f8bf945b4c169c69e3e3eb} 
+\index{USART0.ino@{USART0.ino}!USART\_Init@{USART\_Init}}
+\index{USART\_Init@{USART\_Init}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Init()}{USART\_Init()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{unsigned int}]{ubrr }\end{DoxyParamCaption})}
+
+
+
+Initialisation des variables pour pouvoir utiliser transmit and receive et avoir un bit de stop à 2. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a4fb05335500c4185447e5845fe9c5dde}\label{_u_s_a_r_t0_8ino_a4fb05335500c4185447e5845fe9c5dde} 
+\index{USART0.ino@{USART0.ino}!USART\_puts@{USART\_puts}}
+\index{USART\_puts@{USART\_puts}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_puts()}{USART\_puts()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily USART\+\_\+puts (\begin{DoxyParamCaption}\item[{"{}error"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_s_a_r_t0_8ino_ab6e9fd192b4aa0d1342af41edb7e8db6}\label{_u_s_a_r_t0_8ino_ab6e9fd192b4aa0d1342af41edb7e8db6} 
+\index{USART0.ino@{USART0.ino}!USART\_puts@{USART\_puts}}
+\index{USART\_puts@{USART\_puts}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_puts()}{USART\_puts()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void USART\+\_\+puts (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de sauter une ligne. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_a48435142a44158906915a0de70dcab5c}\label{_u_s_a_r_t0_8ino_a48435142a44158906915a0de70dcab5c} 
+\index{USART0.ino@{USART0.ino}!USART\_Receive@{USART\_Receive}}
+\index{USART\_Receive@{USART\_Receive}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Receive()}{USART\_Receive()}}
+{\footnotesize\ttfamily unsigned char USART\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recevoir les caractères transmits. 
+
+\Hypertarget{_u_s_a_r_t0_8ino_ab8c416106cf1aff4ccdb3da4860fc179}\label{_u_s_a_r_t0_8ino_ab8c416106cf1aff4ccdb3da4860fc179} 
+\index{USART0.ino@{USART0.ino}!USART\_Transmit@{USART\_Transmit}}
+\index{USART\_Transmit@{USART\_Transmit}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Transmit()}{USART\_Transmit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Fonction transmit. 
+
+
+
+\doxysubsection{Documentation des variables}
+\Hypertarget{_u_s_a_r_t0_8ino_a0544c3fe466e421738dae463968b70ba}\label{_u_s_a_r_t0_8ino_a0544c3fe466e421738dae463968b70ba} 
+\index{USART0.ino@{USART0.ino}!else@{else}}
+\index{else@{else}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily else \{UDR0}
+
+\Hypertarget{_u_s_a_r_t0_8ino_adf916204820072417ed73a32de1cefcf}\label{_u_s_a_r_t0_8ino_adf916204820072417ed73a32de1cefcf} 
+\index{USART0.ino@{USART0.ino}!flag@{flag}}
+\index{flag@{flag}!USART0.ino@{USART0.ino}}
+\doxysubsubsection{\texorpdfstring{flag}{flag}}
+{\footnotesize\ttfamily int flag =0}
+

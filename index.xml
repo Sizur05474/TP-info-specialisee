@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="fr">
+  <compound refid="_u_s_a_r_t0_8ino" kind="file"><name>USART0.ino</name>
+    <member refid="_u_s_a_r_t0_8ino_1a5bf1d46877ac22d5e12d9b1c0432d373" kind="define"><name>FRAMING_ERROR</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a81d2ca6759f3f3bf04556b7558aea6bc" kind="define"><name>PARITY_ERROR</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a71b59e9e65a8625df1d0af2143664c52" kind="define"><name>DATA_OVERRUN</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a802b2b582b121e4632aa9a491d503720" kind="define"><name>FOSC</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a62634036639f88eece6fbf226b45f84b" kind="define"><name>BAUD</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a711e9130c825a7269c8c87dbb57a85e0" kind="define"><name>MYUBRR</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1adf916204820072417ed73a32de1cefcf" kind="variable"><name>flag</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a0544c3fe466e421738dae463968b70ba" kind="variable"><name>else</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a99f79737b2f8bf945b4c169c69e3e3eb" kind="function"><name>USART_Init</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1ab8c416106cf1aff4ccdb3da4860fc179" kind="function"><name>USART_Transmit</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1ab6e9fd192b4aa0d1342af41edb7e8db6" kind="function"><name>USART_puts</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a48435142a44158906915a0de70dcab5c" kind="function"><name>USART_Receive</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a05e7738df4ed987e09baf5c97d834884" kind="function"><name>if</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1a4fb05335500c4185447e5845fe9c5dde" kind="function"><name>USART_puts</name></member>
+    <member refid="_u_s_a_r_t0_8ino_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+</doxygenindex>
