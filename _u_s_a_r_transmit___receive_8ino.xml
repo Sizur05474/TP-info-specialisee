@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="fr">
+  <compounddef id="_u_s_a_r_transmit___receive_8ino" kind="file" language="C++">
+    <compoundname>USARTransmit_Receive.ino</compoundname>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_u_s_a_r_transmit___receive_8ino_1a802b2b582b121e4632aa9a491d503720" prot="public" static="no">
+        <name>FOSC</name>
+        <initializer>16000000</initializer>
+        <briefdescription>
+<para>Déclaration de la fréquence d&apos;oscillation à 16 MHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="11" column="9" bodyfile="USARTransmit_Receive.ino" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_s_a_r_transmit___receive_8ino_1a62634036639f88eece6fbf226b45f84b" prot="public" static="no">
+        <name>BAUD</name>
+        <initializer>9600</initializer>
+        <briefdescription>
+<para>Déclaration de BAUD à 9600 pour la valeur du port série. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="15" column="9" bodyfile="USARTransmit_Receive.ino" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_u_s_a_r_transmit___receive_8ino_1a711e9130c825a7269c8c87dbb57a85e0" prot="public" static="no">
+        <name>MYUBRR</name>
+        <initializer><ref refid="_u_s_a_r_transmit___receive_8ino_1a802b2b582b121e4632aa9a491d503720" kindref="member">FOSC</ref>/16/<ref refid="_u_s_a_r_transmit___receive_8ino_1a62634036639f88eece6fbf226b45f84b" kindref="member">BAUD</ref>-1</initializer>
+        <briefdescription>
+<para>Calcul pour initialiser le taux du BAUD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="19" column="9" bodyfile="USARTransmit_Receive.ino" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="_u_s_a_r_transmit___receive_8ino_1adf916204820072417ed73a32de1cefcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flag</definition>
+        <argsstring></argsstring>
+        <name>flag</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+<para>Initialisation du flag à 0 permettant de ne pas rentrer dans l&apos;interruption au démarrage. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="23" column="5" bodyfile="USARTransmit_Receive.ino" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_u_s_a_r_transmit___receive_8ino_1a99f79737b2f8bf945b4c169c69e3e3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USART_Init</definition>
+        <argsstring>(unsigned int ubrr)</argsstring>
+        <name>USART_Init</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>ubrr</declname>
+        </param>
+        <briefdescription>
+<para>Déclaration d&apos;USART0 pour utiliser la fonction receive et transmit avec un bit de stop à 2. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="28" column="6" bodyfile="USARTransmit_Receive.ino" bodystart="28" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_a_r_transmit___receive_8ino_1ab8c416106cf1aff4ccdb3da4860fc179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USART_Transmit</definition>
+        <argsstring>(unsigned char data)</argsstring>
+        <name>USART_Transmit</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Fonction permettant de transmettre un caractère. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="42" column="6" bodyfile="USARTransmit_Receive.ino" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_a_r_transmit___receive_8ino_1a48435142a44158906915a0de70dcab5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char USART_Receive</definition>
+        <argsstring>(void)</argsstring>
+        <name>USART_Receive</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Fonction permettant de recevoir ce que l&apos;utilisateur envoie et de le stocker dans une variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="53" column="15" bodyfile="USARTransmit_Receive.ino" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_a_r_transmit___receive_8ino_1a934dae072a027d501c262a5e599b240b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_delay_ms</definition>
+        <argsstring>(1)</argsstring>
+        <name>_delay_ms</name>
+        <param>
+          <type>1</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="64" column="1" declfile="USARTransmit_Receive.ino" declline="64" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_s_a_r_transmit___receive_8ino_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+<para>Permet d&apos;utiliser USART_Init et une interruption qui sera active si le flag est à 1 sinon elle renvoit le caractère &apos;A&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="USARTransmit_Receive.ino" line="70" column="5" bodyfile="USARTransmit_Receive.ino" bodystart="70" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FOSC<sp/>16000000<sp/></highlight><highlight class="comment">//<sp/>Clock<sp/>Speed</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">#define<sp/>BAUD<sp/>9600</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MYUBRR<sp/>FOSC/16/BAUD-1</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1adf916204820072417ed73a32de1cefcf" kindref="member">flag</ref>=0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1a99f79737b2f8bf945b4c169c69e3e3eb" kindref="member">USART_Init</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ubrr)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*Set<sp/>baud<sp/>rate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">UBRR0H<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>char)(ubrr&gt;&gt;8);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">UBRR0L<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>char)ubrr;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*Enable<sp/>receiver<sp/>and<sp/>transmitter<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">UCSR0B<sp/>=<sp/>(1&lt;&lt;RXEN0)|(1&lt;&lt;TXEN0)|(1&lt;&lt;RXCIE0);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>frame<sp/>format:<sp/>8data,<sp/>2stop<sp/>bit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">UCSR0C<sp/>=<sp/>(1&lt;&lt;USBS0)|(1&lt;&lt;UCSZ00)|(1&lt;&lt;UCSZ01);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1ab8c416106cf1aff4ccdb3da4860fc179" kindref="member">USART_Transmit</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Wait<sp/>for<sp/>empty<sp/>transmit<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!(UCSR0A<sp/>&amp;<sp/>(1&lt;&lt;UDRE0)));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Put<sp/>data<sp/>into<sp/>buffer,<sp/>sends<sp/>the<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">UDR0<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1a48435142a44158906915a0de70dcab5c" kindref="member">USART_Receive</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Wait<sp/>for<sp/>data<sp/>to<sp/>be<sp/>received<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!(UCSR0A<sp/>&amp;<sp/>(1&lt;&lt;RXC0)));</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Get<sp/>and<sp/>return<sp/>received<sp/>data<sp/>from<sp/>buffer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>UDR0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">ISR(USART_RX_vect)<sp/></highlight><highlight class="comment">//<sp/>https://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1adf916204820072417ed73a32de1cefcf" kindref="member">flag</ref>=1;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><ref refid="_u_s_a_r_transmit___receive_8ino_1a934dae072a027d501c262a5e599b240b" kindref="member">_delay_ms</ref>(1);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="_u_s_a_r_transmit___receive_8ino_1a99f79737b2f8bf945b4c169c69e3e3eb" kindref="member">USART_Init</ref>(<ref refid="_u_s_a_r_transmit___receive_8ino_1a711e9130c825a7269c8c87dbb57a85e0" kindref="member">MYUBRR</ref>);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">sei();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1){</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_u_s_a_r_transmit___receive_8ino_1adf916204820072417ed73a32de1cefcf" kindref="member">flag</ref>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1ab8c416106cf1aff4ccdb3da4860fc179" kindref="member">USART_Transmit</ref>(10);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1ab8c416106cf1aff4ccdb3da4860fc179" kindref="member">USART_Transmit</ref>(UDR0+1);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1adf916204820072417ed73a32de1cefcf" kindref="member">flag</ref>=0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1a934dae072a027d501c262a5e599b240b" kindref="member">_delay_ms</ref>(1);}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1ab8c416106cf1aff4ccdb3da4860fc179" kindref="member">USART_Transmit</ref>(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1adf916204820072417ed73a32de1cefcf" kindref="member">flag</ref>=0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_u_s_a_r_transmit___receive_8ino_1a934dae072a027d501c262a5e599b240b" kindref="member">_delay_ms</ref>(10);}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="USARTransmit_Receive.ino"/>
+  </compounddef>
+</doxygen>

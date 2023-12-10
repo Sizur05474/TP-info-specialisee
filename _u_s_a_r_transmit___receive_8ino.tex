@@ -1,0 +1,124 @@
+\doxysection{Référence du fichier USARTransmit\+\_\+\+Receive.\+ino}
+\hypertarget{_u_s_a_r_transmit___receive_8ino}{}\label{_u_s_a_r_transmit___receive_8ino}\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}~16000000
+\begin{DoxyCompactList}\small\item\em Déclaration de la fréquence d\textquotesingle{}oscillation à 16 MHz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}~9600
+\begin{DoxyCompactList}\small\item\em Déclaration de BAUD à 9600 pour la valeur du port série. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a711e9130c825a7269c8c87dbb57a85e0}{MYUBRR}}~\mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}/16/\mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}-\/1
+\begin{DoxyCompactList}\small\item\em Calcul pour initialiser le taux du BAUD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a99f79737b2f8bf945b4c169c69e3e3eb}{USART\+\_\+\+Init}} (unsigned int ubrr)
+\begin{DoxyCompactList}\small\item\em Déclaration d\textquotesingle{}USART0 pour utiliser la fonction receive et transmit avec un bit de stop à 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_ab8c416106cf1aff4ccdb3da4860fc179}{USART\+\_\+\+Transmit}} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de transmettre un caractère. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a48435142a44158906915a0de70dcab5c}{USART\+\_\+\+Receive}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recevoir ce que l\textquotesingle{}utilisateur envoie et de le stocker dans une variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a934dae072a027d501c262a5e599b240b}{\+\_\+delay\+\_\+ms}} (1)
+\item 
+int \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}utiliser USART\+\_\+\+Init et une interruption qui sera active si le flag est à 1 sinon elle renvoit le caractère \textquotesingle{}A\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_adf916204820072417ed73a32de1cefcf}{flag}} =0
+\begin{DoxyCompactList}\small\item\em Initialisation du flag à 0 permettant de ne pas rentrer dans l\textquotesingle{}interruption au démarrage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_a62634036639f88eece6fbf226b45f84b}\label{_u_s_a_r_transmit___receive_8ino_a62634036639f88eece6fbf226b45f84b} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!BAUD@{BAUD}}
+\index{BAUD@{BAUD}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{BAUD}{BAUD}}
+{\footnotesize\ttfamily \#define BAUD~9600}
+
+
+
+Déclaration de BAUD à 9600 pour la valeur du port série. 
+
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_a802b2b582b121e4632aa9a491d503720}\label{_u_s_a_r_transmit___receive_8ino_a802b2b582b121e4632aa9a491d503720} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!FOSC@{FOSC}}
+\index{FOSC@{FOSC}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{FOSC}{FOSC}}
+{\footnotesize\ttfamily \#define FOSC~16000000}
+
+
+
+Déclaration de la fréquence d\textquotesingle{}oscillation à 16 MHz. 
+
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_a711e9130c825a7269c8c87dbb57a85e0}\label{_u_s_a_r_transmit___receive_8ino_a711e9130c825a7269c8c87dbb57a85e0} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!MYUBRR@{MYUBRR}}
+\index{MYUBRR@{MYUBRR}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{MYUBRR}{MYUBRR}}
+{\footnotesize\ttfamily \#define MYUBRR~\mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}/16/\mbox{\hyperlink{_u_s_a_r_transmit___receive_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}-\/1}
+
+
+
+Calcul pour initialiser le taux du BAUD. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_a934dae072a027d501c262a5e599b240b}\label{_u_s_a_r_transmit___receive_8ino_a934dae072a027d501c262a5e599b240b} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!\_delay\_ms@{\_delay\_ms}}
+\index{\_delay\_ms@{\_delay\_ms}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{\_delay\_ms()}{\_delay\_ms()}}
+{\footnotesize\ttfamily \+\_\+delay\+\_\+ms (\begin{DoxyParamCaption}\item[{1}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_u_s_a_r_transmit___receive_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!main@{main}}
+\index{main@{main}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}utiliser USART\+\_\+\+Init et une interruption qui sera active si le flag est à 1 sinon elle renvoit le caractère \textquotesingle{}A\textquotesingle{}. 
+
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_a99f79737b2f8bf945b4c169c69e3e3eb}\label{_u_s_a_r_transmit___receive_8ino_a99f79737b2f8bf945b4c169c69e3e3eb} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!USART\_Init@{USART\_Init}}
+\index{USART\_Init@{USART\_Init}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Init()}{USART\_Init()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{unsigned int}]{ubrr }\end{DoxyParamCaption})}
+
+
+
+Déclaration d\textquotesingle{}USART0 pour utiliser la fonction receive et transmit avec un bit de stop à 2. 
+
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_a48435142a44158906915a0de70dcab5c}\label{_u_s_a_r_transmit___receive_8ino_a48435142a44158906915a0de70dcab5c} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!USART\_Receive@{USART\_Receive}}
+\index{USART\_Receive@{USART\_Receive}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Receive()}{USART\_Receive()}}
+{\footnotesize\ttfamily unsigned char USART\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recevoir ce que l\textquotesingle{}utilisateur envoie et de le stocker dans une variable. 
+
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_ab8c416106cf1aff4ccdb3da4860fc179}\label{_u_s_a_r_transmit___receive_8ino_ab8c416106cf1aff4ccdb3da4860fc179} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!USART\_Transmit@{USART\_Transmit}}
+\index{USART\_Transmit@{USART\_Transmit}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Transmit()}{USART\_Transmit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de transmettre un caractère. 
+
+
+
+\doxysubsection{Documentation des variables}
+\Hypertarget{_u_s_a_r_transmit___receive_8ino_adf916204820072417ed73a32de1cefcf}\label{_u_s_a_r_transmit___receive_8ino_adf916204820072417ed73a32de1cefcf} 
+\index{USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}!flag@{flag}}
+\index{flag@{flag}!USARTransmit\_Receive.ino@{USARTransmit\_Receive.ino}}
+\doxysubsubsection{\texorpdfstring{flag}{flag}}
+{\footnotesize\ttfamily int flag =0}
+
+
+
+Initialisation du flag à 0 permettant de ne pas rentrer dans l\textquotesingle{}interruption au démarrage. 
+
