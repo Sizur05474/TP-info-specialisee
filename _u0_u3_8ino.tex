@@ -1,0 +1,224 @@
+\doxysection{Référence du fichier U0\+U3.\+ino}
+\hypertarget{_u0_u3_8ino}{}\label{_u0_u3_8ino}\index{U0U3.ino@{U0U3.ino}}
+
+
+Communication entre Usart0 et Usart3 pour pouvoir communiquer avec l\textquotesingle{}alimentation.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u0_u3_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}~16000000
+\begin{DoxyCompactList}\small\item\em Fréquence du quartz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u0_u3_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}~9600
+\begin{DoxyCompactList}\small\item\em Taux de bauds. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u0_u3_8ino_a711e9130c825a7269c8c87dbb57a85e0}{MYUBRR}}~\mbox{\hyperlink{_u0_u3_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}/16/\mbox{\hyperlink{_u0_u3_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}-\/1
+\begin{DoxyCompactList}\small\item\em Calcul du registre UBRR pour le taux de bauds donné. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u0_u3_8ino_a99f79737b2f8bf945b4c169c69e3e3eb}{USART\+\_\+\+Init}} (unsigned int ubrr)
+\begin{DoxyCompactList}\small\item\em Initialise les modules USART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u0_u3_8ino_a5c06fb5953b63194b5a1bad2f4963721}{USART3\+\_\+\+Transmit}} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Transmet un octet via USART3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u0_u3_8ino_a7ed8a68edcbbe290b23ad69a1b63f1f4}{USART0\+\_\+\+Transmit}} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Transmet un octet via USART0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u0_u3_8ino_ab6e9fd192b4aa0d1342af41edb7e8db6}{USART\+\_\+puts}} (unsigned char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Transmet une chaîne de caractères via USART0. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{_u0_u3_8ino_a46859efd006d10fc3121dc7d7bb36016}{USART3\+\_\+\+Receive}} (void)
+\begin{DoxyCompactList}\small\item\em Reçoit un octet via USART3. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{_u0_u3_8ino_a9b69606c617a17c66df60fe757ff86ef}{USART0\+\_\+\+Receive}} (void)
+\begin{DoxyCompactList}\small\item\em Reçoit un octet via USART0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u0_u3_8ino_a88e32db0cad75219c51253f5c1052fc0}{ISR}} (USART3\+\_\+\+RX\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em Interruption de réception USART3. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_u0_u3_8ino_a084f0a9cf05b1877bd8a71a90dae7ff8}{ISR}} (USART0\+\_\+\+RX\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em Interruption de réception USART0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u0_u3_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Fonction principale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_u0_u3_8ino_a2c284de821387c6cc271a6397633b5ab}{flag0}} =0
+\begin{DoxyCompactList}\small\item\em Variable de drapeau pour l\textquotesingle{}USART0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u0_u3_8ino_ae4b665746b6c79c12136b285a2e2079f}{flag3}} =0
+\begin{DoxyCompactList}\small\item\em Variable de drapeau pour l\textquotesingle{}USART3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Communication entre Usart0 et Usart3 pour pouvoir communiquer avec l\textquotesingle{}alimentation. 
+
+
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{_u0_u3_8ino_a62634036639f88eece6fbf226b45f84b}\label{_u0_u3_8ino_a62634036639f88eece6fbf226b45f84b} 
+\index{U0U3.ino@{U0U3.ino}!BAUD@{BAUD}}
+\index{BAUD@{BAUD}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{BAUD}{BAUD}}
+{\footnotesize\ttfamily \#define BAUD~9600}
+
+
+
+Taux de bauds. 
+
+\Hypertarget{_u0_u3_8ino_a802b2b582b121e4632aa9a491d503720}\label{_u0_u3_8ino_a802b2b582b121e4632aa9a491d503720} 
+\index{U0U3.ino@{U0U3.ino}!FOSC@{FOSC}}
+\index{FOSC@{FOSC}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{FOSC}{FOSC}}
+{\footnotesize\ttfamily \#define FOSC~16000000}
+
+
+
+Fréquence du quartz. 
+
+\Hypertarget{_u0_u3_8ino_a711e9130c825a7269c8c87dbb57a85e0}\label{_u0_u3_8ino_a711e9130c825a7269c8c87dbb57a85e0} 
+\index{U0U3.ino@{U0U3.ino}!MYUBRR@{MYUBRR}}
+\index{MYUBRR@{MYUBRR}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{MYUBRR}{MYUBRR}}
+{\footnotesize\ttfamily \#define MYUBRR~\mbox{\hyperlink{_u0_u3_8ino_a802b2b582b121e4632aa9a491d503720}{FOSC}}/16/\mbox{\hyperlink{_u0_u3_8ino_a62634036639f88eece6fbf226b45f84b}{BAUD}}-\/1}
+
+
+
+Calcul du registre UBRR pour le taux de bauds donné. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{_u0_u3_8ino_a084f0a9cf05b1877bd8a71a90dae7ff8}\label{_u0_u3_8ino_a084f0a9cf05b1877bd8a71a90dae7ff8} 
+\index{U0U3.ino@{U0U3.ino}!ISR@{ISR}}
+\index{ISR@{ISR}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ISR (\begin{DoxyParamCaption}\item[{USART0\+\_\+\+RX\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+
+
+Interruption de réception USART0. 
+
+\Hypertarget{_u0_u3_8ino_a88e32db0cad75219c51253f5c1052fc0}\label{_u0_u3_8ino_a88e32db0cad75219c51253f5c1052fc0} 
+\index{U0U3.ino@{U0U3.ino}!ISR@{ISR}}
+\index{ISR@{ISR}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ISR (\begin{DoxyParamCaption}\item[{USART3\+\_\+\+RX\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+
+
+Interruption de réception USART3. 
+
+\Hypertarget{_u0_u3_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_u0_u3_8ino_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{U0U3.ino@{U0U3.ino}!main@{main}}
+\index{main@{main}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction principale. 
+
+\Hypertarget{_u0_u3_8ino_a9b69606c617a17c66df60fe757ff86ef}\label{_u0_u3_8ino_a9b69606c617a17c66df60fe757ff86ef} 
+\index{U0U3.ino@{U0U3.ino}!USART0\_Receive@{USART0\_Receive}}
+\index{USART0\_Receive@{USART0\_Receive}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{USART0\_Receive()}{USART0\_Receive()}}
+{\footnotesize\ttfamily unsigned char USART0\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reçoit un octet via USART0. 
+
+\begin{DoxyReturn}{Renvoie}
+Octet reçu. 
+\end{DoxyReturn}
+\Hypertarget{_u0_u3_8ino_a7ed8a68edcbbe290b23ad69a1b63f1f4}\label{_u0_u3_8ino_a7ed8a68edcbbe290b23ad69a1b63f1f4} 
+\index{U0U3.ino@{U0U3.ino}!USART0\_Transmit@{USART0\_Transmit}}
+\index{USART0\_Transmit@{USART0\_Transmit}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{USART0\_Transmit()}{USART0\_Transmit()}}
+{\footnotesize\ttfamily void USART0\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Transmet un octet via USART0. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em data} & Octet à transmettre. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u0_u3_8ino_a46859efd006d10fc3121dc7d7bb36016}\label{_u0_u3_8ino_a46859efd006d10fc3121dc7d7bb36016} 
+\index{U0U3.ino@{U0U3.ino}!USART3\_Receive@{USART3\_Receive}}
+\index{USART3\_Receive@{USART3\_Receive}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{USART3\_Receive()}{USART3\_Receive()}}
+{\footnotesize\ttfamily unsigned char USART3\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reçoit un octet via USART3. 
+
+\begin{DoxyReturn}{Renvoie}
+Octet reçu. 
+\end{DoxyReturn}
+\Hypertarget{_u0_u3_8ino_a5c06fb5953b63194b5a1bad2f4963721}\label{_u0_u3_8ino_a5c06fb5953b63194b5a1bad2f4963721} 
+\index{U0U3.ino@{U0U3.ino}!USART3\_Transmit@{USART3\_Transmit}}
+\index{USART3\_Transmit@{USART3\_Transmit}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{USART3\_Transmit()}{USART3\_Transmit()}}
+{\footnotesize\ttfamily void USART3\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+
+
+Transmet un octet via USART3. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em data} & Octet à transmettre. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u0_u3_8ino_a99f79737b2f8bf945b4c169c69e3e3eb}\label{_u0_u3_8ino_a99f79737b2f8bf945b4c169c69e3e3eb} 
+\index{U0U3.ino@{U0U3.ino}!USART\_Init@{USART\_Init}}
+\index{USART\_Init@{USART\_Init}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_Init()}{USART\_Init()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{unsigned int}]{ubrr }\end{DoxyParamCaption})}
+
+
+
+Initialise les modules USART. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ubrr} & Valeur du registre UBRR. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u0_u3_8ino_ab6e9fd192b4aa0d1342af41edb7e8db6}\label{_u0_u3_8ino_ab6e9fd192b4aa0d1342af41edb7e8db6} 
+\index{U0U3.ino@{U0U3.ino}!USART\_puts@{USART\_puts}}
+\index{USART\_puts@{USART\_puts}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{USART\_puts()}{USART\_puts()}}
+{\footnotesize\ttfamily void USART\+\_\+puts (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Transmet une chaîne de caractères via USART0. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em str} & Chaîne de caractères à transmettre. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des variables}
+\Hypertarget{_u0_u3_8ino_a2c284de821387c6cc271a6397633b5ab}\label{_u0_u3_8ino_a2c284de821387c6cc271a6397633b5ab} 
+\index{U0U3.ino@{U0U3.ino}!flag0@{flag0}}
+\index{flag0@{flag0}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{flag0}{flag0}}
+{\footnotesize\ttfamily flag0 =0}
+
+
+
+Variable de drapeau pour l\textquotesingle{}USART0. 
+
+\Hypertarget{_u0_u3_8ino_ae4b665746b6c79c12136b285a2e2079f}\label{_u0_u3_8ino_ae4b665746b6c79c12136b285a2e2079f} 
+\index{U0U3.ino@{U0U3.ino}!flag3@{flag3}}
+\index{flag3@{flag3}!U0U3.ino@{U0U3.ino}}
+\doxysubsubsection{\texorpdfstring{flag3}{flag3}}
+{\footnotesize\ttfamily flag3 =0}
+
+
+
+Variable de drapeau pour l\textquotesingle{}USART3. 
+
